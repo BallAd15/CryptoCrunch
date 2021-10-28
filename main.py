@@ -5,7 +5,6 @@ import threading
 import time
 import requests
 import emoji
-from keep_alive import keep_alive
 
 def send_json_request(ws, request):
     ws.send(json.dumps(request))
