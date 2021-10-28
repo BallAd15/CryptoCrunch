@@ -1,1 +1,1 @@
-
+websocket @ file:///home/runner/.cache/pypoetry/artifacts/eb/73/a3/208992651da7db36a7d0af00dd95a2fc07f666648fce8f8796a9cde994/websocket-0.2.1.tar.gz
