@@ -7,7 +7,6 @@ doqu==0.28.2
 idna==3.2
 lxml==4.6.3
 multidict==5.1.0
-numpy==1.21.21
 protobuf==3.17.3
 python-dateutil==2.8.2
 python-dotenv==0.19.1
