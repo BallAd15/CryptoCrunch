@@ -44,8 +44,10 @@ def heartbeat(interval, ws):
         print("Heartbeat sent")
 
 def add_reaction(emoji,message_id):
+  one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q','NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA']
+  auth_random=random.choice(one_of)
   headers={
-    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q'
+    'authorization':auth_random
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
   times.sleep(1)
