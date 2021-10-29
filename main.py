@@ -29,7 +29,7 @@ def add_reaction(emoji,message_id):
   headers={
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXt-kQ.ndqlLwRIYHN3x5QUPjiZj8wjHfI'
     }
-  r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  r=requests.put(f'https://discord.com/api/v9/channels/862978164032536617/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -60,7 +60,7 @@ while True:
         #guild_id=int(event['d']['guild_id'])
         author_id=int(event['d']['author']['id'])
 
-        if channel_id==699702250531979325 and author_id==617037497574359050:
+        if channel_id==862978164032536617 and author_id==617037497574359050:
 
             restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
