@@ -45,7 +45,7 @@ def heartbeat(interval, ws):
 
 def add_reaction(emoji,message_id):
   headers={
-    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXuo8A.1tkyvJZy7yNoJefZxAkntyszbTw'
+    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q'
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
@@ -56,7 +56,7 @@ event = recieve_json_response(ws)
 heartbeat_interval = event['d']['heartbeat_interval'] / 1000
 threading._start_new_thread(heartbeat, (heartbeat_interval, ws))
 
-token = "NDMyNzE0MzE3NDU3MjYwNTY1.YXuo8A.1tkyvJZy7yNoJefZxAkntyszbTw"
+token = "NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q"
 payload = {
     'op': 2,
     "d": {
