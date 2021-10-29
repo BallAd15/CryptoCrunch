@@ -48,6 +48,7 @@ def add_reaction(emoji,message_id):
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q'
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
