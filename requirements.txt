@@ -1,1 +1,18 @@
-websocket @ file:///home/runner/.cache/pypoetry/artifacts/eb/73/a3/208992651da7db36a7d0af00dd95a2fc07f666648fce8f8796a9cde994/websocket-0.2.1.tar.gz
+aiohttp==3.7.4.post0
+async-timeout==3.0.1
+attrs==21.2.0
+certifi==2021.5.30
+chardet==4.0.0
+charset-normalizer==2.0.4
+doqu==0.28.2
+emoji==1.6.1
+idna==3.2
+lxml==4.6.3
+multidict==5.1.0
+numpy==1.21.2
+protobuf==3.17.3
+python-dateutil==2.8.2
+pytz==2021.1
+requests==2.26.0
+six==1.16.0
+typing-extensions==3.10.0.0
