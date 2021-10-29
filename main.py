@@ -44,7 +44,7 @@ def heartbeat(interval, ws):
         print("Heartbeat sent")
 
 def add_reaction(emoji,message_id):
-  one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q','NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA']
+  one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q']#'NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA'
   auth_random=random.choice(one_of)
   headers={
     'authorization':auth_random
