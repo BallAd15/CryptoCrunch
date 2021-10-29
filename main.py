@@ -27,11 +27,9 @@ def heartbeat(interval, ws):
 
 def add_reaction(emoji,message_id):
   headers={
-    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXrU9Q.wRLff8b5Qv1k1y6qzyAxuIEcVZk'
+    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXt-kQ.ndqlLwRIYHN3x5QUPjiZj8wjHfI'
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-
-
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -40,7 +38,7 @@ event = recieve_json_response(ws)
 heartbeat_interval = event['d']['heartbeat_interval'] / 1000
 threading._start_new_thread(heartbeat, (heartbeat_interval, ws))
 
-token = 'NDMyNzE0MzE3NDU3MjYwNTY1.YXrU9Q.wRLff8b5Qv1k1y6qzyAxuIEcVZk'
+token = "NDMyNzE0MzE3NDU3MjYwNTY1.YXt-kQ.ndqlLwRIYHN3x5QUPjiZj8wjHfI"
 payload = {
     'op': 2,
     "d": {
@@ -54,41 +52,39 @@ payload = {
 }
 send_json_request(ws, payload)
 
-
 while True:
     event = recieve_json_response(ws)
 
     try:
-      channel_id=int(event['d']['channel_id'])
-      #guild_id=int(event['d']['guild_id'])
-      author_id=int(event['d']['author']['id'])
+        channel_id=int(event['d']['channel_id'])
+        #guild_id=int(event['d']['guild_id'])
+        author_id=int(event['d']['author']['id'])
 
-      if channel_id==699702250531979325 and author_id==617037497574359050:
+        if channel_id==699702250531979325 and author_id==617037497574359050:
 
-        restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
+            restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
-        #print(f"{event['d']['author']['username']}: {event['d']['content']}")
+            #print(f"{event['d']['author']['username']}: {event['d']['content']}")
 
-        string=str({event['d']['embeds'][0]['description']})
+            string=str({event['d']['embeds'][0]['description']})
 
-        name_end=string.find("left a")
+            name_end=string.find("left a")
 
-        name=string[4:(name_end-2)]
-        if name in restricted_ids:
-          break
-        
-        time.sleep(2)
-        index = string.find('React w')
+            name=string[4:(name_end-2)]
+            if name in restricted_ids:
+                break
+            
+            time.sleep(2)
+            index = string.find('React w')
 
-        emojic = string[index+11:index+12]
-        msgid = int(event['d']['id'])
+            emojic = string[index+11:index+12]
+            msgid = int(event['d']['id'])
 
 
-        add_reaction(emojic, msgid)
-      op_code = event['op']
-
-      if op_code == 11:
-        print('heartbeat received')
-
+            add_reaction(emojic, msgid)
+            print("Reacted")
+            op_code = event['op']
+            if op_code == 11:
+                print('heartbeat received')
     except:
         pass
