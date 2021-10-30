@@ -99,9 +99,8 @@ while True:
       name=string[4:(name_end-2)]
       if name in restricted_ids:
           break
-
-      slep=random.randrange(1.4,2)
-      time.sleep(slep)
+          
+      time.sleep(1.4)
       index = string.find('React w')
 
       emojic = string[index+11:index+12]
