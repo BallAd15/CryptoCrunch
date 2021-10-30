@@ -55,22 +55,13 @@ def add_reaction(emoji,message_id, channel_id):
       'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
       }
     r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-    
-  elif channel_id==699702250531979325:
-    header={'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'}
-    header2={'authorization': cased_auth}
-    x=random.randint(1,2,3,4,5)
-    if x==1:
-      r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
-    elif x==2 or x==3:
-      r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header2)
-  else:
-    headers={
-      'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
-      }
-    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-    #time.sleep(0.8)
-    #r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  
+  headers={
+    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
+    }
+  r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  time.sleep(0.8)
+  r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -115,10 +106,8 @@ while True:
           name=string[4:(name_end-2)]
           if name in restricted_ids:
               break
-          if "red envelope" in string:
-              break
 
-          slep=random.randrange(1.4,2.5)
+          slep=random.randrange(1.4,2)
           time.sleep(slep)
           index = string.find('React w')
 
