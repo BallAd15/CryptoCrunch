@@ -46,12 +46,6 @@ def heartbeat(interval, ws):
 def add_reaction(emoji,message_id, channel_id):
   #one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q']#'NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA'
   #auth_random=random.choice(one_of)
-  
-  cased_auth="NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8"
-  if channel_id==900880235086626846:
-    header={'authorization': cased_auth}
-    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
-  
   headers={
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs'
     }
@@ -93,6 +87,16 @@ while True:
       #print(f"{event['d']['author']['username']}: {event['d']['content']}")
 
       string=str({event['d']['embeds'][0]['description']})
+      
+      if channel_id==900880235086626846:
+        cur_begin=string.find("drop of")
+        cur_end=string.find("USELESS")
+        amount=int(string[cur_begin+10:cur_end])
+        if amount>=5000000:      
+          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8"]
+          for j in cased_auth:
+            header={'authorization': j}
+            r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
 
       name_end=string.find("left a")
 
