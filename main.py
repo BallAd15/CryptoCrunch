@@ -81,41 +81,40 @@ payload = {
 send_json_request(ws, payload)
 
 while True:
-    event = recieve_json_response(ws)
+  event = recieve_json_response(ws)
+  try:
+    channel_id=int(event['d']['channel_id'])
+    #guild_id=int(event['d']['guild_id'])
+    author_id=int(event['d']['author']['id'])
 
-    try:
-        channel_id=int(event['d']['channel_id'])
-        #guild_id=int(event['d']['guild_id'])
-        author_id=int(event['d']['author']['id'])
+    if author_id==617037497574359050:
+      restricted_ids=['194114491552628737','258297161740058624','903314702728319056']
 
-        if author_id==617037497574359050:
-          restricted_ids=['194114491552628737','258297161740058624','903314702728319056']
+      #print(f"{event['d']['author']['username']}: {event['d']['content']}")
 
-          #print(f"{event['d']['author']['username']}: {event['d']['content']}")
+      string=str({event['d']['embeds'][0]['description']})
 
-          string=str({event['d']['embeds'][0]['description']})
+      name_end=string.find("left a")
 
-          name_end=string.find("left a")
+      name=string[4:(name_end-2)]
+      if name in restricted_ids:
+          break
 
-          name=string[4:(name_end-2)]
-          if name in restricted_ids:
-              break
+      slep=random.randrange(1.4,2)
+      time.sleep(slep)
+      index = string.find('React w')
 
-          slep=random.randrange(1.4,2)
-          time.sleep(slep)
-          index = string.find('React w')
-
-          emojic = string[index+11:index+12]
-          msgid = int(event['d']['id'])
+      emojic = string[index+11:index+12]
+      msgid = int(event['d']['id'])
 
 
-          add_reaction(emojic, msgid,channel_id)
-          print("Reacted")
-          op_code = event['op']
-          if op_code == 11:
-              print('heartbeat received')
-    except:
-        pass 
+      add_reaction(emojic, msgid,channel_id)
+      print("Reacted")
+      op_code = event['op']
+      if op_code == 11:
+          print('heartbeat received')
+  except:
+    pass 
 
   
 @client.command()
