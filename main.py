@@ -51,6 +51,10 @@ def add_reaction(emoji,message_id, channel_id):
   if channel_id==900880235086626846:
     header={'authorization': cased_auth}
     r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
+    headers={
+      'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
+      }
+    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
     
   elif channel_id==699702250531979325:
     header={'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'}
