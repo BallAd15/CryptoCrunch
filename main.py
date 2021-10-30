@@ -50,8 +50,8 @@ def add_reaction(emoji,message_id):
     'authorization':auth_random
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-  times.sleep(1)
-  r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  times.sleep(0.8
+  r=requests.delete(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -96,7 +96,7 @@ while True:
             if name in restricted_ids:
                 break
             
-            time.sleep(2)
+            time.sleep(1.4)
             index = string.find('React w')
 
             emojic = string[index+11:index+12]
