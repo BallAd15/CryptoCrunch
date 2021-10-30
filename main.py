@@ -89,14 +89,19 @@ while True:
       string=str({event['d']['embeds'][0]['description']})
       
       if channel_id==900880235086626846:
-        cur_begin=string.find("drop of")
-        cur_end=string.find("USELESS")
-        amount=int(string[cur_begin+10:cur_end])
-        if amount>=5000000:      
+        cur_begin=string.find("897155100819202088> **")
+        cur_end=string.find("USELESS** (≈")
+
+        amount=int(string[cur_begin+22:cur_end])
+        msgid = int(event['d']['id'])
+
+        if amount>=5000000:    
           cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8"]
           for j in cased_auth:
             header={'authorization': j}
-            r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
+            index = string.find('React w')
+            emoji = string[index+11:index+12]
+            r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
         break
 
       name_end=string.find("left a")
