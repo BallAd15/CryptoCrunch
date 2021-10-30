@@ -43,15 +43,15 @@ def heartbeat(interval, ws):
         send_json_request(ws, heartbeatJSON)
         print("Heartbeat sent")
 
-def add_reaction(emoji,message_id):
+def add_reaction(emoji,message_id, channel_id):
   #one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q']#'NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA'
   #auth_random=random.choice(one_of)
   headers={
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
     }
-  r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
   time.sleep(0.8)
-  r=requests.delete(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -82,7 +82,7 @@ while True:
         #guild_id=int(event['d']['guild_id'])
         author_id=int(event['d']['author']['id'])
 
-        if channel_id==699702250531979325 and author_id==617037497574359050:
+        if and author_id==617037497574359050:
 
             restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
@@ -103,7 +103,7 @@ while True:
             msgid = int(event['d']['id'])
 
 
-            add_reaction(emojic, msgid)
+            add_reaction(emojic, msgid,channel_id)
             print("Reacted")
             op_code = event['op']
             if op_code == 11:
