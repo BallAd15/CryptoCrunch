@@ -51,10 +51,6 @@ def add_reaction(emoji,message_id, channel_id):
   if channel_id==900880235086626846:
     header={'authorization': cased_auth}
     r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
-    headers={
-      'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
-      }
-    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
   
   headers={
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
@@ -93,8 +89,6 @@ while True:
         author_id=int(event['d']['author']['id'])
 
         if author_id==617037497574359050:
-          
-            
           restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
           #print(f"{event['d']['author']['username']}: {event['d']['content']}")
