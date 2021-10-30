@@ -46,6 +46,12 @@ def heartbeat(interval, ws):
 def add_reaction(emoji,message_id, channel_id):
   #one_of=['NDMyNzE0MzE3NDU3MjYwNTY1.YXutiQ.LRhMARDU2RZIPMVgTiHSZEqFP-Q']#'NzcyNzc4NTM1NzA5NDQyMDc4.YXv1Vw.o-GYGwoPNuWRie-v9IZfTFKyZGA'
   #auth_random=random.choice(one_of)
+  
+  cased_auth="NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8"
+  if channel_id==900880235086626846:
+    header={'authorization': cased_auth}
+    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
+  
   headers={
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
     }
