@@ -50,7 +50,7 @@ def add_reaction(emoji,message_id):
     'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
     }
   r=requests.put(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-  times.sleep(0.8
+  time.sleep(0.8)
   r=requests.delete(f'https://discord.com/api/v9/channels/699702250531979325/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
