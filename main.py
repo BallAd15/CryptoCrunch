@@ -97,6 +97,7 @@ while True:
           for j in cased_auth:
             header={'authorization': j}
             r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
+        break
 
       name_end=string.find("left a")
 
