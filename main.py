@@ -69,8 +69,8 @@ def add_reaction(emoji,message_id, channel_id):
       'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
       }
     r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-    time.sleep(0.8)
-    r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+    #time.sleep(0.8)
+    #r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
@@ -102,7 +102,7 @@ while True:
         author_id=int(event['d']['author']['id'])
 
         if author_id==617037497574359050:
-
+            
             restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
             #print(f"{event['d']['author']['username']}: {event['d']['content']}")
@@ -114,8 +114,11 @@ while True:
             name=string[4:(name_end-2)]
             if name in restricted_ids:
                 break
+            if "red envelope" in string:
+                break
             
-            time.sleep(1.4)
+            slep=random.randrange(1.4,2.5)
+            time.sleep(slep)
             index = string.find('React w')
 
             emojic = string[index+11:index+12]
