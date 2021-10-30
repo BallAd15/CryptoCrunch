@@ -92,7 +92,7 @@ while True:
         cur_begin=string.find("897155100819202088> **")
         cur_end=string.find("USELESS** (≈")
 
-        amount=int(string[cur_begin+22:cur_end])
+        amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
         if amount>=5000000:    
