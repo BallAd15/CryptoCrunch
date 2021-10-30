@@ -55,18 +55,18 @@ def add_reaction(emoji,message_id, channel_id):
   elif channel_id==699702250531979325:
     header={'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'}
     header2={'authorization': cased_auth}
-    x=random.randint(1,2,3,4)
+    x=random.randint(1,2,3,4,5)
     if x==1:
       r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
     if x==2 or x==3:
       r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header2)
-  
-  headers={
-    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
-    }
-  r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
-  time.sleep(0.8)
-  r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+  else:    
+    headers={
+      'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
+      }
+    r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
+    time.sleep(0.8)
+    r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
 
 ws = websocket.WebSocket()
 ws.connect('wss://gateway.discord.gg/?v=6&encording=json')
