@@ -53,7 +53,7 @@ def add_reaction(emoji,message_id, channel_id):
     r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
   
   headers={
-    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU'
+    'authorization':'NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs'
     }
   r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/%40me',headers=headers)
   time.sleep(0.8)
@@ -66,7 +66,7 @@ event = recieve_json_response(ws)
 heartbeat_interval = event['d']['heartbeat_interval'] / 1000
 threading._start_new_thread(heartbeat, (heartbeat_interval, ws))
 
-token = "NDMyNzE0MzE3NDU3MjYwNTY1.YXv2Sw.ajMnlIlMM_pq5GiANDoZa4RzHaU"
+token = "NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"
 payload = {
     'op': 2,
     "d": {
@@ -89,7 +89,7 @@ while True:
         author_id=int(event['d']['author']['id'])
 
         if author_id==617037497574359050:
-          restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
+          restricted_ids=['194114491552628737','258297161740058624','903314702728319056']
 
           #print(f"{event['d']['author']['username']}: {event['d']['content']}")
 
