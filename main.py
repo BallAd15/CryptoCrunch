@@ -82,7 +82,7 @@ while True:
         #guild_id=int(event['d']['guild_id'])
         author_id=int(event['d']['author']['id'])
 
-        if and author_id==617037497574359050:
+        if author_id==617037497574359050:
 
             restricted_ids=['194114491552628737','258297161740058624','903314702728319056',]
 
