@@ -78,7 +78,7 @@ while True:
   event = recieve_json_response(ws)
   try:
     channel_id=int(event['d']['channel_id'])
-    #guild_id=int(event['d']['guild_id'])
+    guild_id=int(event['d']['guild_id'])
     author_id=int(event['d']['author']['id'])
 
     if author_id==617037497574359050:
@@ -88,17 +88,25 @@ while True:
 
       string=str({event['d']['embeds'][0]['description']})
       
-      if channel_id==900880235086626846:
+      if guild_id==846854226952978452:
         cur_begin=string.find("897155100819202088> **")
         cur_end=string.find("USELESS** (≈")
 
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
-        if amount>=200000:    
-          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"]
-          for j in cased_auth:
-            header={'authorization': j}
+        if amount>=400000:
+          if channel_id==900880235086626846:
+            cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"]
+            for j in cased_auth:
+              time.sleep(1.5)
+              header={'authorization': j}
+              index = string.find('React w')
+              emoji = string[index+11:index+12]
+              r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
+          else:
+            header={'authorization':"NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"}
+            time.sleep(4.2)
             index = string.find('React w')
             emoji = string[index+11:index+12]
             r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
