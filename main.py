@@ -91,7 +91,7 @@ while True:
       if guild_id==846854226952978452:
         cur_begin=string.find("897155100819202088> **")
         cur_end=string.find("USELESS** (≈")
-
+        
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
@@ -111,7 +111,7 @@ while True:
             emoji = string[index+11:index+12]
             r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
         break
-
+      
       name_end=string.find("left a")
 
       name=string[4:(name_end-2)]
