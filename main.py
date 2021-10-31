@@ -95,9 +95,9 @@ while True:
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
-        if amount>=2000000:
+        if amount>=5000000:
           #if channel_id==900880235086626846:
-          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"]
+          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs","NjgzOTAyOTA1NzA3MDAzOTIw.YXR04A.f4rmzq4-nzg9gb9ziu5oIx77Wis"]
           for j in cased_auth:
             time.sleep(1.5)
             header={'authorization': j}
