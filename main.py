@@ -110,13 +110,13 @@ while True:
             index = string.find('React w')
             emoji = string[index+11:index+12]
             r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
-        break
+        continue
       
       name_end=string.find("left a")
 
       name=string[4:(name_end-2)]
       if name in restricted_ids:
-          break
+          continue
           
       time.sleep(1.4)
       index = string.find('React w')
