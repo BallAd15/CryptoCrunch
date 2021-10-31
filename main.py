@@ -12,7 +12,7 @@ import json
 import threading
 import websocket
 import time
-
+#ok
 intents = discord.Intents.all()
 intents.members = True
 client = commands.Bot(command_prefix = 's.',intents=intents)
