@@ -73,7 +73,7 @@ payload = {
     }
 }
 send_json_request(ws, payload)
-'''
+
 while True:
   event = recieve_json_response(ws)
   try:
@@ -95,9 +95,9 @@ while True:
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
-        if amount>=10000000:
+        if amount>= 1000000000:
           #if channel_id==900880235086626846:
-          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs","NjgzOTAyOTA1NzA3MDAzOTIw.YXR04A.f4rmzq4-nzg9gb9ziu5oIx77Wis"]
+          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NjgzOTAyOTA1NzA3MDAzOTIw.YXR04A.f4rmzq4-nzg9gb9ziu5oIx77Wis"]
           time.sleep(1.7)
           for j in cased_auth:
             header={'authorization': j}
@@ -147,7 +147,7 @@ async def where(ctx):
 @client.group(invoke_without_command=True)
 @commands.cooldown(1,7,commands.BucketType.user)
 async def help(ctx):
-'''
+
   
   em = discord.Embed(title="🐱‍👓 Help", description = "```md\nSenpai greets you! :)```", color = 0x15b9d3) #color = ctx.author.color
   
