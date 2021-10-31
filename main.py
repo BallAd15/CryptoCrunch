@@ -73,7 +73,7 @@ payload = {
     }
 }
 send_json_request(ws, payload)
-
+'''
 while True:
   event = recieve_json_response(ws)
   try:
@@ -147,6 +147,7 @@ async def where(ctx):
 @client.group(invoke_without_command=True)
 @commands.cooldown(1,7,commands.BucketType.user)
 async def help(ctx):
+'''
   
   em = discord.Embed(title="🐱‍👓 Help", description = "```md\nSenpai greets you! :)```", color = 0x15b9d3) #color = ctx.author.color
   
