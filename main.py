@@ -95,13 +95,13 @@ while True:
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
 
-        if amount>=5000000:    
-          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8"]
+        if amount>=200000:    
+          cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NDMyNzE0MzE3NDU3MjYwNTY1.YX1yUQ.vysr58-D4boTy66_0OwWaIVtIzs"]
           for j in cased_auth:
             header={'authorization': j}
             index = string.find('React w')
             emoji = string[index+11:index+12]
-            r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{message_id}/reactions/{emoji}/%40me',headers=header)
+            r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
         break
 
       name_end=string.find("left a")
