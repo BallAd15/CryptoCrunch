@@ -119,7 +119,7 @@ while True:
       if name in restricted_ids:
           continue
           
-      if price>1.2:
+      if price>0.3:
         time.sleep(1.5)
         index = string.find('React w')
 
