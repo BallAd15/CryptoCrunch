@@ -90,18 +90,18 @@ while True:
       
       find_dol=int(string.find('xa0$'))
       find_end=int(string[find_dol+4:].find(').'))
-      price =int(string[find_dol+4:find_end+find_dol+4])
+      price =float(string[find_dol+4:find_end+find_dol+4])
       
       if guild_id==846854226952978452:
-        
+        '''
         cur_begin=string.find("897155100819202088> **")
         cur_end=string.find("USELESS** (≈")
         
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
-        
+        '''
 
-        if amount>=157,511,997:
+        if price>5.1:
           #if channel_id==900880235086626846:
           cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NTg1OTE0NDI5NzQ1NTI4ODUz.YYAsdg.Rb1pYVf6GQ9DrkEdSfJt0mrAs38"]
           time.sleep(1.7)
@@ -119,8 +119,8 @@ while True:
       if name in restricted_ids:
           continue
           
-      if price>0.1:
-        time.sleep(1.4)
+      if price>1.2:
+        time.sleep(1.5)
         index = string.find('React w')
 
         emojic = string[index+11:index+12]
