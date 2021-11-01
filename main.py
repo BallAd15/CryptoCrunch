@@ -93,15 +93,15 @@ while True:
       price =int(string[find_dol+4:find_end+find_dol+4])
       
       if guild_id==846854226952978452:
-        '''
+        
         cur_begin=string.find("897155100819202088> **")
         cur_end=string.find("USELESS** (≈")
         
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
         msgid = int(event['d']['id'])
-        '''
+        
 
-        if price>= 5:
+        if amount>=157,511,997:
           #if channel_id==900880235086626846:
           cased_auth=["NzcyNzc4NTM1NzA5NDQyMDc4.YX1qMg.WgLf3GjxJWjjJrqdeRjr12yKDx8","NTg1OTE0NDI5NzQ1NTI4ODUz.YYAsdg.Rb1pYVf6GQ9DrkEdSfJt0mrAs38"]
           time.sleep(1.7)
@@ -114,11 +114,12 @@ while True:
         continue
       
       name_end=string.find("left a")
-
+      
       name=string[4:(name_end-2)]
       if name in restricted_ids:
           continue
-      if price>1.1:
+          
+      if price>0.1:
         time.sleep(1.4)
         index = string.find('React w')
 
@@ -127,7 +128,7 @@ while True:
 
 
         add_reaction(emojic, msgid,channel_id)
-        print("Reacted")
+
       op_code = event['op']
       if op_code == 11:
           print('heartbeat received')
