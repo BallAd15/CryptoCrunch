@@ -111,7 +111,7 @@ while True:
             index = string.find('React w')
             emoji = string[index+11:index+12]
             r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
-            time.sleep(0.1)
+            time.sleep(1)
             r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
         continue
       
