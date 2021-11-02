@@ -120,8 +120,8 @@ while True:
       if name in restricted_ids:
           continue
           
-      if price>0.3:
-        time.sleep(1.5)
+      if price>0.03:
+        time.sleep(1.8)
         index = string.find('React w')
 
         emojic = string[index+11:index+12]
