@@ -109,8 +109,9 @@ while True:
             header={'authorization': j}
             index = string.find('React w')
             emoji = string[index+11:index+12]
-            r=requests.put(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
-            r=requests.delete(f'https://discord.com/api/v9/channels/900880235086626846/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
+            r=requests.put(f'https://discord.com/api/v9/channels/{channel_id}/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
+            time.sleep(0.1)
+            r=requests.delete(f'https://discord.com/api/v9/channels/{channel_id}/messages/{msgid}/reactions/{emoji}/%40me',headers=header)
         continue
       
       name_end=string.find("left a")
