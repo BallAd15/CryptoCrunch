@@ -98,8 +98,9 @@ while True:
         cur_end=string.find("USELESS** (≈")
         
         amount=int(string[cur_begin+22:cur_end].replace(',', '')) 
-        msgid = int(event['d']['id'])
         '''
+        msgid = int(event['d']['id'])
+        
 
         if price>5.1:
           #if channel_id==900880235086626846:
